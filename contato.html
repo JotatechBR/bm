@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — Garimpo do Arouche</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">GA</span>
+      <span class="brand-name">Garimpo do Arouche</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="dados.html">Dados</a>
+      <a href="contato.html" class="active">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <p class="hero-eyebrow">Fale conosco</p>
+        <h1>Contato e visita</h1>
+        <p class="hero-sub">Estamos à disposição para atender você — venha garimpar!</p>
+      </div>
+    </section>
+
+    <section class="wrap section">
+      <div class="grid grid-2">
+        <article class="card">
+          <h2>Informações de contato</h2>
+          <dl>
+            <div class="row"><dt>Telefone</dt><dd><a href="tel:+551164577385">(11) 6457-7385</a></dd></div>
+            <div class="row"><dt>E-mail</dt><dd><a href="mailto:roger.salmente@gmail.com">roger.salmente@gmail.com</a></dd></div>
+            <div class="row"><dt>Endereço</dt><dd>R do Arouche, 207</dd></div>
+            <div class="row"><dt>Bairro</dt><dd>República</dd></div>
+            <div class="row"><dt>Cidade</dt><dd>São Paulo / SP</dd></div>
+            <div class="row"><dt>CEP</dt><dd>01.219-001</dd></div>
+          </dl>
+          <div class="contact-buttons">
+            <a href="tel:+551164577385" class="btn btn-primary">📞 Ligar</a>
+            <a href="mailto:roger.salmente@gmail.com" class="btn btn-ghost">✉️ Enviar e-mail</a>
+          </div>
+          <div class="social">
+            <a href="#" class="social-link">📷 @garimpodoarouche</a>
+            <a href="#" class="social-link">💬 WhatsApp</a>
+            <a href="#" class="social-link">📘 Facebook</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Horário de funcionamento</h2>
+          <dl>
+            <div class="row"><dt>Segunda a sexta</dt><dd>09h às 18h</dd></div>
+            <div class="row"><dt>Sábado</dt><dd>09h às 14h</dd></div>
+            <div class="row"><dt>Domingo</dt><dd class="muted">Fechado</dd></div>
+            <div class="row"><dt>Feriados</dt><dd class="muted">Consultar</dd></div>
+          </dl>
+          <h2 style="margin-top:24px">Envie uma mensagem</h2>
+          <form class="form" onsubmit="return montarEmail(event)">
+            <label>
+              Nome
+              <input type="text" id="nome" placeholder="Seu nome" required />
+            </label>
+            <label>
+              Assunto
+              <input type="text" id="assunto" placeholder="Assunto da mensagem" required />
+            </label>
+            <label>
+              Mensagem
+              <textarea id="mensagem" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <p class="form-note muted">
+              O botão abre seu aplicativo de e-mail com a mensagem pronta para envio.
+            </p>
+          </form>
+        </article>
+      </div>
+
+      <!-- FAQ -->
+      <h2 class="section-title">Perguntas frequentes</h2>
+      <div class="faq">
+        <details class="card">
+          <summary>Vocês compram ou aceitam peças em consignação?</summary>
+          <p class="muted">Sim! Você pode deixar suas peças em bom estado para venda em consignação. Passe na loja ou fale conosco para combinar os detalhes.</p>
+        </details>
+        <details class="card">
+          <summary>As peças são usadas ou novas?</summary>
+          <p class="muted">Trabalhamos principalmente com artigos usados selecionados e revisados, mas volta e meia aparecem peças novas ou seminovas no acervo.</p>
+        </details>
+        <details class="card">
+          <summary>Quais formas de pagamento vocês aceitam?</summary>
+          <p class="muted">Aceitamos dinheiro, cartões de débito e crédito e Pix. Fale conosco para condições de parcelamento.</p>
+        </details>
+        <details class="card">
+          <summary>Precisa marcar horário para visitar?</summary>
+          <p class="muted">Não! É só passar dentro do nosso horário de funcionamento. Será um prazer receber você.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <div>
+        <span class="brand-mark small">GA</span>
+        <p>Garimpo do Arouche · Rogerio Rodrigues Pereira — CNPJ 52.877.998/0001-00</p>
+      </div>
+      <p class="muted">R do Arouche, 207 — República, São Paulo/SP • (11) 6457-7385</p>
+    </div>
+  </footer>
+
+  <script>
+    function montarEmail(e) {
+      e.preventDefault();
+      var nome = document.getElementById("nome").value;
+      var assunto = document.getElementById("assunto").value;
+      var mensagem = document.getElementById("mensagem").value;
+      var corpo = "Nome: " + nome + "%0D%0A%0D%0A" + encodeURIComponent(mensagem);
+      window.location.href =
+        "mailto:roger.salmente@gmail.com?subject=" +
+        encodeURIComponent(assunto) +
+        "&body=" + corpo;
+      return false;
+    }
+  </script>
+</body>
+</html>
